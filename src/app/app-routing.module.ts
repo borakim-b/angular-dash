@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { TestDashComponent } from './test-dash/test-dash.component';
+
+const routes: Routes = [
+  {path: '', component: TestDashComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
