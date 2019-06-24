@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TestList } from '../model/test-list';
+import { TestListItem } from '../model/test-list';
 
 declare var require: any;
 const data: any = require('../mock/data/test-dash.json')
@@ -23,8 +23,8 @@ export class TestDashComponent implements OnInit {
   loadData() {
     console.log(data);
     this.title = data.title;
-    this.rows = data.content;
-    // this.testList = data.content;
+    this.rows = data.content.map(d => TestListItem.newInstance(d))
+
   }
 
 }
