@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TestList } from '../model/test-list';
+
+declare var require: any;
+const data: any = require('../mock/data/test-dash.json')
 
 @Component({
   selector: 'app-test-dash',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestDashComponent implements OnInit {
 
+  public title: string;
+  public rows: testList[] = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  loadData() {
+    console.log(data);
+    this.title = data.title;
+    this.testList = data.content;
   }
 
 }
