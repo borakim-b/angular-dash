@@ -12,7 +12,7 @@ const data: any = require('../mock/data/test-dash.json')
 export class TestDashComponent implements OnInit {
 
   public title: string;
-  public rows: testList[] = [];
+  public rows: TestList[] = [];
 
   constructor() { }
 
@@ -23,7 +23,8 @@ export class TestDashComponent implements OnInit {
   loadData() {
     console.log(data);
     this.title = data.title;
-    this.testList = data.content;
+    this.rows = data.content;
+    // this.testList = data.content;
   }
 
 }
